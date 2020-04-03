@@ -18,7 +18,7 @@ def getday(day):
     
     soup = bs4.BeautifulSoup(text,'lxml')
     srcs = ['http://mars.jpl.nasa.gov' + img['src'] for img in soup.find_all('img') if 'Image' in img['alt']]
-
+    
     # drop the smaller thumbnail duplicates
     srcs = srcs[:int(len(srcs)/2)]
 
